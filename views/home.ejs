@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> </title>
+
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/75a9526977.js" crossorigin="anonymous"></script>
+    
+   
+</head>
+<body>
+    <h1 id="todo-heading">TODO App</h1>
+  <form action="/add-task" method="post">
+    
+    <div id="description-container">
+        <label for="description">DESCRIPTION</label>
+        <input type="text" name="description" placeholder="write here..." id="description" required>
+    </div>
+    <div id="category-date">
+      <div id="category">
+        <label for="category">Category</label>
+        <select name="category" id="category">
+            <option value="work">Work</option>
+            <option value="college">college</option>
+            <option value="personal">Personal</option>
+            <option value="cleaning">Cleaning</option>
+            <option value="other">Other</option>
+        </select>
+       </div>
+    <div id="due-date">
+        <label for="due-date">Due Date</label>
+        <input type="date" name="date" id="due-date" required>
+       </div>
+    </div>
+    <div id="add-delete">
+        <div id="add">
+            <button type="submit"><i class="fa-solid fa-plus">&nbsp;&nbsp;</i>ADD TASK</button>
+        </div>
+        <!-- <div id="delete">
+            <button type="reset" onclick=""><i class="fa-solid fa-trash-can">&nbsp;&nbsp;</i>DELETE TASKS</button>            
+        </div> -->
+    </div>
+</form>
+   <footer>
+
+        <ul>
+            <%for(i of todolist) {%>
+                <li class="list-elements">
+                    <a href="/delete-task/?id=<%= i._id %>">
+                        <!-- <input type="checkbox" id="delete-checkbox"> -->
+                        <!-- <input type="submit"> -->
+                        <i class="fa-solid fa-rectangle-xmark"></i>
+                    </a>
+                    <%= i.description %>
+                    <div class="i-category">
+                    <%= i.category %>
+                    </div>
+                    <div class="i-date">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    <%= i.date %>
+                    </div>
+                     
+                </li>
+            <%}%>
+            </ul>
+
+   </footer>
+</body>  
+</html>

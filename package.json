@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.1",
+    "nodemon": "^2.0.20"
+  },
+  "name": "to-do-nodejs",
+  "version": "1.0.0",
+  "description": "to do list using express and mongo",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mohammed Zeeshan Khan",
+  "license": "ISC"
+}
